@@ -1,0 +1,49 @@
+{
+  "name": "vaporize",
+  "version": "1.0.0",
+  "description": "Sync your emulation library with Steam Grid",
+  "keywords": [
+    "steam",
+    "emulation"
+  ],
+  "homepage": "https://github.com/smrq/vaporize",
+  "bugs": {
+    "url": "https://github.com/smrq/vaporize/issues"
+  },
+  "license": "ISC",
+  "author": "Greg Smith <smr.kyu@gmail.com>",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/smrq/vaporize"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier --write \"{,lib/**}/*.js\"",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "crc": "^3.4.4",
+    "fs-extra": "^4.0.1",
+    "globby": "^6.1.0",
+    "lodash.groupby": "^4.6.0",
+    "lodash.template": "^4.4.0",
+    "long": "^3.2.0",
+    "steam-shortcut-editor": "^3.0.0"
+  },
+  "devDependencies": {
+    "git-exec-and-restage": "^1.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.1.0",
+    "prettier": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=7.6.0",
+    "npm": ">=5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "git-exec-and-restage prettier --write --"
+    ]
+  }
+}
